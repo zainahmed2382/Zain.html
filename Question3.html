@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array-fruit</title>
+</head>
+<body>
+
+    <h1>Search Item</h1>
+
+    <label for="item">Enter Item:</label>
+    <input type="text" id="itemInput" placeholder="Enter Your favourite Fruit">
+    <button id="searchButton"  onclick="searchItem()">Search</button>
+    
+    <div id="searchResult"></div>
+
+    <script>
+        const items = ['apple', 'banana', 'orange', 'mango', 'grapes','kivi','watermelon','drangon fruit', 'papaya','stwaberry','graps', 'blue berry','gooseberry'];
+
+        function searchItem() {
+            const item = document.getElementById('itemInput').value.toLowerCase().trim();
+            const result = items.includes(item);
+            const resultDiv = document.getElementById('searchResult');
+            
+            if (result) {
+                resultDiv.textContent = `Item '${item}' found!`;
+            } else {
+                resultDiv.textContent = `Item '${item}' not found!`;
+            }
+        }
+    </script>
+   
+</body>
+</html>

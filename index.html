@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .grid-conatiner{
+            display: grid;
+            grid-gap:10px;
+            background-color: rgb(102, 255, 0);
+            padding: 20px;
+            /* color: red; */
+        }
+        div{
+            background-color: rgb(162, 162, 16);
+            text-align: center;
+            padding: 15px;
+            font-size: 35px;
+        }
+
+        #item1{grid-column: 1/span 1;}
+        #item2{grid-column: 2/span 5;}
+        #item3{grid-column: 1/span 6;}
+        #item4{grid-column: 1/span 3; 
+            grid-row: 3/span 2;}
+
+        #item5{grid-column: 6/span 1;}
+        #item6{grid-column: 6/span 1;}
+        #item7{grid-column: 1/span 6;}
+        
+
+    </style>
+</head>
+<body>
+    <div class="grid-conatiner">
+        <div id="item1" style="background-color: blueviolet;" >Logo</div>
+        <div id="item2"  style="background-color: rgb(226, 162, 43);" >Header</div>
+        <div id="item3"  style="background-color: rgb(226, 43, 147);" >carisoal </div>
+        <div id="item4"  style="background-color: rgb(43, 195, 226);" >Main</div>
+        <div id="item6"  style="background-color: rgb(115, 91, 89);" >Link</div>
+        <div id="item7"  style="background-color: rgb(129, 139, 161);" >Footer</div>
+        
+    </div>
+</body>
+</html>
