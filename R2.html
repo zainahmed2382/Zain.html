@@ -13,28 +13,75 @@
         left: 35%;
         top: 100px;
         width: 300px;
+        border: ;
     }
     
-    
+    .f1{ position: relative;
+        left: 35%;
+        top: 120px;
+        width: 300px;}
+
+
+
 </style>
 </head>
 <body>
+
+
+
+
+    
     <form>
         <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+          <label for="exampleInputEmail1" class="form-label">Name</label>
+          <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+         
         </div>
         <div class="mb-3">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1">
+          <label for="exampleInputPassword1" class="form-label">Email</label>
+          <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+           <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
         </div>
         <div class="mb-3 form-check">
           <input type="checkbox" class="form-check-input" id="exampleCheck1">
           <label class="form-check-label" for="exampleCheck1">Check me out</label>
         </div>
-        <button type="submit"  class="btn btn-primary" style="position: relative; left: 35%; top: 100px;" >Submit</button>
+        <button type="submit"  class="btn btn-primary" style="position: relative; left: 35%; top: 100px; background-color: orangered; border: solid white;"  >Submit</button>
       </form>
     
+     
+  <script>
+    $(document).ready(function () {
+      $("#loginForm").on("submit", function (e) {
+        e.preventDefault(); 
+        var name = $("#name").val();
+        var email = $("#email").val();
+
+        if (name && email) {
+          var tableHTML = `
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Gmail</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>${name}</td>
+                  <td>${email}</td>
+                </tr>
+              </tbody>
+            </table>
+          `;
+          $("#outputTable").html(tableHTML);
+        } else {
+          $("#outputTable").html(`<p class="text-danger">Please fill out both fields!</p>`);
+        }
+      });
+    });
+  </script>
+
+        
 </body>
 </html>
